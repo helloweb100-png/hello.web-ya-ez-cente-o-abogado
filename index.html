@@ -34,7 +34,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://unpkg.com" crossorigin>
-  <link rel="preload" as="image" href="img/abogado-recorte.webp" type="image/webp" fetchpriority="high">
   <link rel="preload" as="image" href="img/mark-gold.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Mulish:wght@300;400;500;600;700;800&display=swap">
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/light/style.css">
@@ -64,6 +63,7 @@
         "areaServed": { "@type": "Country", "name": "México" },
         "knowsLanguage": "es-MX",
         "employee": { "@id": "#abogado" },
+        "sameAs": ["https://www.facebook.com/share/1B3kEigMWv/"],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Áreas de práctica",
@@ -84,7 +84,7 @@
         "name": "Francisco José Yáñez Centeno y Arvizu",
         "honorificPrefix": "Mtro.",
         "jobTitle": "Abogado",
-        "image": "img/abogado-recorte.webp",
+        "sameAs": ["https://www.linkedin.com/in/francisco-jos%C3%A9-ya%C3%B1ez-centeno-y-arvizu-599189379"],
         "worksFor": { "@id": "#despacho" },
         "knowsAbout": ["Derecho electoral", "Transparencia", "Protección de datos personales", "Compliance empresarial"]
       },
@@ -234,16 +234,6 @@
             <a class="btn btn--ghost btn--lg" href="#areas"><span>Conocer áreas de práctica</span></a>
           </div>
         </div>
-
-        <figure class="portrait" id="portrait">
-          <span class="portrait__plate" aria-hidden="true"></span>
-          <span class="portrait__frame" aria-hidden="true"></span>
-          <img class="portrait__img" src="img/abogado-recorte.webp" alt="Mtro. Francisco José Yáñez Centeno y Arvizu, abogado" width="960" height="960" fetchpriority="high" decoding="async">
-          <figcaption class="portrait__caption">
-            <strong>Mtro. Francisco José Yáñez Centeno y Arvizu</strong>
-            <span>Abogado en derecho electoral, transparencia y protección de datos</span>
-          </figcaption>
-        </figure>
       </div>
     </section>
 
@@ -339,15 +329,37 @@
         <div class="areas__grid">
           <ul class="areas__list" id="areasList">
 
-            <li class="area is-open" style="--img:url('img/area-familiar.jpg')">
+            <li class="area is-open" style="--img:url('img/area-compliance.jpg')">
               <h3 class="area__title">
                 <button class="area__btn" type="button" aria-expanded="true" aria-controls="area-1">
+                  <i class="ph-light ph-buildings area__icon" aria-hidden="true"></i>
+                  <span class="area__name">Compliance empresarial</span>
+                  <i class="ph-light ph-arrow-up-right area__arrow" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="area__panel" id="area-1" role="region">
+                <div class="area__inner">
+                  <div class="area__strip" aria-hidden="true"></div>
+                  <p>Cumplimiento normativo que transforma el riesgo en ventajas competitivas para tu empresa.</p>
+                  <ul class="ticks">
+                    <li>Diagnóstico de riesgos legales</li>
+                    <li>Políticas y lineamientos internos</li>
+                    <li>Prevención antes que sanción</li>
+                  </ul>
+                  <a class="link" href="https://wa.me/523121851166?text=Hola%2C%20me%20interesa%20asesor%C3%ADa%20en%20compliance%20empresarial." target="_blank" rel="noopener" data-wa="Hola, me interesa asesoría en compliance empresarial."><span>Consultar sobre esta área</span><i class="ph-light ph-arrow-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </li>
+
+            <li class="area" style="--img:url('img/area-familiar.jpg')">
+              <h3 class="area__title">
+                <button class="area__btn" type="button" aria-expanded="false" aria-controls="area-2">
                   <i class="ph-light ph-users-three area__icon" aria-hidden="true"></i>
                   <span class="area__name">Derecho familiar</span>
                   <i class="ph-light ph-arrow-up-right area__arrow" aria-hidden="true"></i>
                 </button>
               </h3>
-              <div class="area__panel" id="area-1" role="region">
+              <div class="area__panel" id="area-2" role="region">
                 <div class="area__inner">
                   <div class="area__strip" aria-hidden="true"></div>
                   <p>Orientación clara y humana en los asuntos que involucran a tu familia, cuidando siempre lo que más importa.</p>
@@ -363,13 +375,13 @@
 
             <li class="area" style="--img:url('img/area-sucesiones.jpg')">
               <h3 class="area__title">
-                <button class="area__btn" type="button" aria-expanded="false" aria-controls="area-2">
+                <button class="area__btn" type="button" aria-expanded="false" aria-controls="area-3">
                   <i class="ph-light ph-scroll area__icon" aria-hidden="true"></i>
                   <span class="area__name">Sucesiones y testamentos</span>
                   <i class="ph-light ph-arrow-up-right area__arrow" aria-hidden="true"></i>
                 </button>
               </h3>
-              <div class="area__panel" id="area-2" role="region">
+              <div class="area__panel" id="area-3" role="region">
                 <div class="area__inner">
                   <div class="area__strip" aria-hidden="true"></div>
                   <p>Acompañamiento cuando se perdió un familiar, con o sin testamento, para ordenar la herencia y proteger el patrimonio.</p>
@@ -385,13 +397,13 @@
 
             <li class="area" style="--img:url('img/area-electoral.jpg')">
               <h3 class="area__title">
-                <button class="area__btn" type="button" aria-expanded="false" aria-controls="area-3">
+                <button class="area__btn" type="button" aria-expanded="false" aria-controls="area-4">
                   <i class="ph-light ph-flag-banner area__icon" aria-hidden="true"></i>
                   <span class="area__name">Derecho electoral</span>
                   <i class="ph-light ph-arrow-up-right area__arrow" aria-hidden="true"></i>
                 </button>
               </h3>
-              <div class="area__panel" id="area-3" role="region">
+              <div class="area__panel" id="area-4" role="region">
                 <div class="area__inner">
                   <div class="area__strip" aria-hidden="true"></div>
                   <p>Tu participación puede generar un mejor futuro. Te asesoramos para participar dentro del marco legal electoral.</p>
@@ -401,28 +413,6 @@
                     <li>Prevención de riesgos y atención a impugnaciones</li>
                   </ul>
                   <a class="link" href="https://wa.me/523121851166?text=Hola%2C%20necesito%20asesor%C3%ADa%20en%20derecho%20electoral." target="_blank" rel="noopener" data-wa="Hola, necesito asesoría en derecho electoral."><span>Consultar sobre esta área</span><i class="ph-light ph-arrow-right" aria-hidden="true"></i></a>
-                </div>
-              </div>
-            </li>
-
-            <li class="area" style="--img:url('img/area-compliance.jpg')">
-              <h3 class="area__title">
-                <button class="area__btn" type="button" aria-expanded="false" aria-controls="area-4">
-                  <i class="ph-light ph-buildings area__icon" aria-hidden="true"></i>
-                  <span class="area__name">Compliance empresarial</span>
-                  <i class="ph-light ph-arrow-up-right area__arrow" aria-hidden="true"></i>
-                </button>
-              </h3>
-              <div class="area__panel" id="area-4" role="region">
-                <div class="area__inner">
-                  <div class="area__strip" aria-hidden="true"></div>
-                  <p>Cumplimiento normativo que transforma el riesgo en ventajas competitivas para tu empresa.</p>
-                  <ul class="ticks">
-                    <li>Diagnóstico de riesgos legales</li>
-                    <li>Políticas y lineamientos internos</li>
-                    <li>Prevención antes que sanción</li>
-                  </ul>
-                  <a class="link" href="https://wa.me/523121851166?text=Hola%2C%20me%20interesa%20asesor%C3%ADa%20en%20compliance%20empresarial." target="_blank" rel="noopener" data-wa="Hola, me interesa asesoría en compliance empresarial."><span>Consultar sobre esta área</span><i class="ph-light ph-arrow-right" aria-hidden="true"></i></a>
                 </div>
               </div>
             </li>
@@ -465,6 +455,7 @@
                     <li>Materias civil, familiar, mercantil y laboral</li>
                     <li>Denuncias de hechos que podrían constituir un delito</li>
                     <li>Respuesta a demandas y notificaciones legales</li>
+                    <li>Recuperación de cartera vencida</li>
                   </ul>
                   <a class="link" href="https://wa.me/523121851166?text=Hola%2C%20necesito%20asesor%C3%ADa%20sobre%20una%20demanda%20o%20denuncia." target="_blank" rel="noopener" data-wa="Hola, necesito asesoría sobre una demanda o denuncia."><span>Consultar sobre esta área</span><i class="ph-light ph-arrow-right" aria-hidden="true"></i></a>
                 </div>
@@ -485,23 +476,60 @@
                   <p>Cumplimiento en transparencia y protección de datos personales, con medidas de seguridad y autorregulación.</p>
                   <ul class="ticks">
                     <li>Medidas de seguridad administrativas, físicas y técnicas</li>
-                    <li>Documento de seguridad</li>
                     <li>Profesional de Privacidad (DPO) y deber de confidencialidad</li>
+                    <li>Avisos de privacidad</li>
+                    <li>Ciberseguridad</li>
                   </ul>
                   <a class="link" href="https://wa.me/523121851166?text=Hola%2C%20necesito%20asesor%C3%ADa%20en%20protecci%C3%B3n%20de%20datos%20personales." target="_blank" rel="noopener" data-wa="Hola, necesito asesoría en protección de datos personales."><span>Consultar sobre esta área</span><i class="ph-light ph-arrow-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </li>
+
+            <li class="area" style="--img:url('img/despacho-justicia.jpg')">
+              <h3 class="area__title">
+                <button class="area__btn" type="button" aria-expanded="false" aria-controls="area-8">
+                  <i class="ph-light ph-file-text area__icon" aria-hidden="true"></i>
+                  <span class="area__name">Contratos</span>
+                  <i class="ph-light ph-arrow-up-right area__arrow" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="area__panel" id="area-8" role="region">
+                <div class="area__inner">
+                  <div class="area__strip" aria-hidden="true"></div>
+                  <p>Revisión, orientación y apoyo para comprender los compromisos de un acuerdo.</p>
+                  <a class="link" href="https://wa.me/523121851166?text=Hola%2C%20necesito%20asesor%C3%ADa%20sobre%20un%20contrato." target="_blank" rel="noopener" data-wa="Hola, necesito asesoría sobre un contrato."><span>Consultar sobre esta área</span><i class="ph-light ph-arrow-right" aria-hidden="true"></i></a>
+                </div>
+              </div>
+            </li>
+
+            <li class="area" style="--img:url('img/area-litigio.jpg')">
+              <h3 class="area__title">
+                <button class="area__btn" type="button" aria-expanded="false" aria-controls="area-9">
+                  <i class="ph-light ph-briefcase area__icon" aria-hidden="true"></i>
+                  <span class="area__name">Asuntos laborales</span>
+                  <i class="ph-light ph-arrow-up-right area__arrow" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="area__panel" id="area-9" role="region">
+                <div class="area__inner">
+                  <div class="area__strip" aria-hidden="true"></div>
+                  <p>Consultas sobre despidos y situaciones que afectan tus derechos laborales.</p>
+                  <a class="link" href="https://wa.me/523121851166?text=Hola%2C%20necesito%20asesor%C3%ADa%20en%20asuntos%20laborales." target="_blank" rel="noopener" data-wa="Hola, necesito asesoría en asuntos laborales."><span>Consultar sobre esta área</span><i class="ph-light ph-arrow-right" aria-hidden="true"></i></a>
                 </div>
               </div>
             </li>
           </ul>
 
           <aside class="areas__stage" aria-hidden="true">
-            <figure class="stage is-active"><img src="img/area-familiar.jpg" alt="" width="1200" height="800" loading="lazy"></figure>
+            <figure class="stage is-active"><img src="img/area-compliance.jpg" alt="" width="1200" height="800" loading="lazy"></figure>
+            <figure class="stage"><img src="img/area-familiar.jpg" alt="" width="1200" height="800" loading="lazy"></figure>
             <figure class="stage"><img src="img/area-sucesiones.jpg" alt="" width="1200" height="800" loading="lazy"></figure>
             <figure class="stage"><img src="img/area-electoral.jpg" alt="" width="1200" height="800" loading="lazy"></figure>
-            <figure class="stage"><img src="img/area-compliance.jpg" alt="" width="1200" height="800" loading="lazy"></figure>
             <figure class="stage"><img src="img/area-inmobiliario.jpg" alt="" width="1200" height="800" loading="lazy"></figure>
             <figure class="stage"><img src="img/area-litigio.jpg" alt="" width="1200" height="800" loading="lazy"></figure>
             <figure class="stage"><img src="img/area-datos.jpg" alt="" width="1200" height="800" loading="lazy"></figure>
+            <figure class="stage"><img src="img/despacho-justicia.jpg" alt="" width="1200" height="800" loading="lazy"></figure>
+            <figure class="stage"><img src="img/area-litigio.jpg" alt="" width="1200" height="800" loading="lazy"></figure>
             <span class="stage__corner stage__corner--tl"></span>
             <span class="stage__corner stage__corner--br"></span>
           </aside>
@@ -661,31 +689,16 @@
     <section class="trayectoria section" id="trayectoria" aria-labelledby="tray-title">
       <div class="container trayectoria__grid">
         <div class="trayectoria__copy">
-          <h2 class="h2" id="tray-title" data-split>Una voz activa en transparencia y <em>protección de datos.</em></h2>
-          <p class="lead" data-reveal>El Mtro. Francisco José Yáñez Centeno y Arvizu participa como ponente en el Diplomado “El nuevo modelo de transparencia y protección de datos personales” del Instituto Mexicano de Transparencia (IMET).</p>
-          <p data-reveal>Esa preparación académica respalda la asesoría que ofrecemos a empresas, instituciones y personas que necesitan cumplir con la ley y proteger la información que manejan.</p>
+          <h2 class="h2" id="tray-title" data-split>30 años de experiencia <em>al frente del despacho.</em></h2>
+          <p class="lead" data-reveal>El Mtro. Francisco José Yáñez Centeno y Arvizu es el titular de Yáñez Centeno Abogados, con 30 años de experiencia y una formación muy completa en el sector público, en el sector privado y en la parte académica.</p>
+          <p data-reveal>Esa trayectoria respalda la asesoría que ofrecemos a personas, familias, empresas e instituciones.</p>
         </div>
 
-        <div class="temario" data-reveal>
-          <p class="temario__label">Temario del módulo 16</p>
-          <h3 class="temario__title">Las medidas de seguridad y el documento de seguridad en materia de protección de datos personales</h3>
-          <ol class="temario__list">
-            <li><span class="temario__key">A</span><p>Las medidas de seguridad para la protección de datos personales.</p></li>
-            <li>
-              <span class="temario__key">B</span>
-              <div>
-                <p>Administrativas</p>
-                <ul class="temario__sub">
-                  <li><span>B.1</span> Físicas</li>
-                  <li><span>B.2</span> Técnicas</li>
-                  <li><span>B.3</span> El deber de confidencialidad</li>
-                </ul>
-              </div>
-            </li>
-            <li><span class="temario__key">C</span><p>La autorregulación vinculante.</p></li>
-            <li><span class="temario__key">D</span><p>El Profesional de Privacidad (DPO).</p></li>
-          </ol>
-        </div>
+        <ul class="trayectoria__facts" data-reveal>
+          <li><span>Sector público</span><p>Comisionado del INFOCOL, que presidió de 2022 a 2024, y Secretario de Protección de Datos Personales del INAI.</p></li>
+          <li><span>Sector privado</span><p>Socio fundador de un despacho jurídico y responsable jurídico regional de una empresa.</p></li>
+          <li><span>Ámbito académico</span><p>Catedrático en la UNAM, la UNIVA y la Universidad de Colima, con estudios de posgrado en la Universidad Complutense de Madrid y la Universidad Antonio de Nebrija.</p></li>
+        </ul>
       </div>
     </section>
 
@@ -750,10 +763,6 @@
               <a href="mailto:fyanezcenteno1976@gmail.com"><i class="ph-light ph-envelope-simple" aria-hidden="true"></i><span><small>Correo electrónico</small>fyanezcenteno1976@gmail.com</span></a>
             </li>
           </ul>
-
-          <figure class="contact__portrait" aria-hidden="true">
-            <img src="img/abogado-recorte.webp" alt="" width="960" height="960" loading="lazy">
-          </figure>
         </div>
 
         <form class="form" id="contactForm" novalidate autocomplete="on">
@@ -829,10 +838,10 @@
       <div class="footer__col">
         <h2>Áreas</h2>
         <ul>
+          <li>Compliance empresarial</li>
           <li>Derecho familiar</li>
           <li>Sucesiones y testamentos</li>
           <li>Derecho electoral</li>
-          <li>Compliance empresarial</li>
           <li>Derecho inmobiliario</li>
           <li>Demandas y denuncias</li>
         </ul>
@@ -843,11 +852,36 @@
           <li><a href="tel:+523121851166">312 185 11 66</a></li>
           <li><a href="mailto:fyanezcenteno1976@gmail.com">fyanezcenteno1976@gmail.com</a></li>
           <li><a href="https://wa.me/523121851166?text=Hola%2C%20quiero%20agendar%20mi%20asesor%C3%ADa." target="_blank" rel="noopener" data-wa="Hola, quiero agendar mi asesoría.">Escríbenos por WhatsApp</a></li>
+          <li><a href="https://www.linkedin.com/in/francisco-jos%C3%A9-ya%C3%B1ez-centeno-y-arvizu-599189379" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://www.facebook.com/share/1B3kEigMWv/" target="_blank" rel="noopener">Facebook</a></li>
         </ul>
       </div>
     </div>
+    <div class="container footer__tags">
+      <h2>Etiquetas</h2>
+      <ul>
+        <li>Abogados en Colima</li>
+        <li>Abogado en Colima</li>
+        <li>Despacho jurídico en Colima</li>
+        <li>Asesoría legal</li>
+        <li>Asesoría jurídica</li>
+        <li>Derecho familiar</li>
+        <li>Sucesiones y testamentos</li>
+        <li>Derecho electoral</li>
+        <li>Compliance empresarial</li>
+        <li>Derecho inmobiliario</li>
+        <li>Contratos</li>
+        <li>Asuntos laborales</li>
+        <li>Demandas y denuncias</li>
+        <li>Recuperación de cartera vencida</li>
+        <li>Protección de datos personales</li>
+        <li>Avisos de privacidad</li>
+        <li>Ciberseguridad</li>
+      </ul>
+    </div>
     <div class="container footer__legal">
       <p>© <span id="year">2026</span> Yáñez Centeno Abogados. Todos los derechos reservados.</p>
+      <a href="aviso-de-privacidad.html" class="footer__aviso">Aviso de privacidad</a>
       <a href="#inicio" class="footer__top" aria-label="Volver arriba"><span>Volver arriba</span><i class="ph-light ph-arrow-up" aria-hidden="true"></i></a>
     </div>
   </footer>

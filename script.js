@@ -194,13 +194,9 @@
     const minMs = reduce ? 500 : 2600;
     const loaded = new Promise((r) => (document.readyState === 'complete' ? r() : window.addEventListener('load', r, { once: true })));
     const fonts = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
-    const portrait = $('.portrait__img');
-    const portraitReady = portrait && !portrait.complete
-      ? new Promise((r) => { portrait.addEventListener('load', r, { once: true }); portrait.addEventListener('error', r, { once: true }); })
-      : Promise.resolve();
     const minTime = new Promise((r) => setTimeout(r, minMs));
     const maxTime = new Promise((r) => setTimeout(r, 7000));
-    const ready = Promise.race([Promise.all([loaded, fonts, portraitReady, minTime]), maxTime]);
+    const ready = Promise.race([Promise.all([loaded, fonts, minTime]), maxTime]);
 
     if (!canMotion) {
       return ready.then(() => new Promise((resolve) => {
@@ -238,15 +234,11 @@
     gsap.set('.hero__eyebrow', { opacity: 0, y: 20 });
     gsap.set('.hero__title .wi', { yPercent: 118 });
     gsap.set(['.hero__lead', '.hero__actions .btn'], { opacity: 0, y: 28 });
-    gsap.set('.portrait__plate', { opacity: 0, yPercent: 6 });
-    gsap.set('.portrait__frame', { scaleY: 0, transformOrigin: '50% 100%' });
-    gsap.set('.portrait__img', { clipPath: 'inset(100% 0% 0% 0%)', scale: 1.08, transformOrigin: '50% 100%' });
-    gsap.set('.portrait__caption', { opacity: 0, x: -30 });
     gsap.set(['.hero__bg-wrap', '.hero__diamond', '.hero__watermark', '#particles'], { opacity: 0 });
   }
 
   /* =========================================================
-     8. Entrada del hero (narrativa: marca, promesa, acción, persona)
+     8. Entrada del hero (narrativa: marca, promesa, acción)
      ========================================================= */
   function heroIntro() {
     const { gsap } = window;
@@ -261,10 +253,6 @@
       .to('.hero__title .wi', { yPercent: 0, duration: 1.45, stagger: 0.075 }, 0.35)
       .to('.hero__lead', { opacity: 1, y: 0, duration: 1.2 }, 0.9)
       .to('.hero__actions .btn', { opacity: 1, y: 0, duration: 1.1, stagger: 0.12 }, 1.05)
-      .to('.portrait__plate', { opacity: 1, yPercent: 0, duration: 1.6 }, 0.3)
-      .to('.portrait__frame', { scaleY: 1, duration: 1.7, ease: 'expo.inOut' }, 0.35)
-      .to('.portrait__img', { clipPath: 'inset(0% 0% 0% 0%)', scale: 1, duration: 1.9, onComplete: () => gsap.set('.portrait__img', { clearProps: 'clipPath' }) }, 0.55)
-      .to('.portrait__caption', { opacity: 1, x: 0, duration: 1.3 }, 1.35)
       .call(() => { const w = $('#waFloat'); if (w) w.classList.add('is-visible'); }, null, 1.8);
   }
 
@@ -277,14 +265,13 @@
     gsap.to('.hero__copy', { y: -70, opacity: 0.12, ease: 'none', scrollTrigger: scrub });
     gsap.to('.hero__bg-wrap', { yPercent: 16, scale: 1.08, ease: 'none', scrollTrigger: scrub });
     gsap.to('.hero__watermark', { yPercent: -18, ease: 'none', scrollTrigger: scrub });
-    gsap.to('.portrait', { y: 50, ease: 'none', scrollTrigger: scrub });
 
     if (!finePointer) return;
     const hero = $('.hero');
     const glow = $('#heroGlow');
     const gx = gsap.quickTo(glow, 'x', { duration: 0.9, ease: 'power3' });
     const gy = gsap.quickTo(glow, 'y', { duration: 0.9, ease: 'power3' });
-    const layers = [['.portrait__img', 10], ['.portrait__frame', -16], ['.portrait__plate', -7], ['.portrait__caption', 20], ['.hero__watermark', -18]]
+    const layers = [['.hero__watermark', -18]]
       .map(([sel, amt]) => { const el = $(sel); return el ? { amt, x: gsap.quickTo(el, 'x', { duration: 1.3, ease: 'power3' }), y: gsap.quickTo(el, 'y', { duration: 1.3, ease: 'power3' }) } : null; })
       .filter(Boolean);
 
